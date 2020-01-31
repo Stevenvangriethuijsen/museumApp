@@ -1,22 +1,27 @@
+// Add event handler
 function submitComment() {
-  // get name and store it
+  // gather Data
   const inputField = document.getElementById("name");
   const name = inputField.value;
-  console.log(name);
-  // get message of user and store it
   const textArea = document.getElementById("msg");
   const msg = textArea.value;
-  console.log(msg);
+  // create needed elements
   const comment = document.createElement("section");
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
+  // adjust created elements
   h3.innerHTML = `${name} said:`;
   p.innerHTML = msg;
-  console.log(h3, p);
   comment.classList.add(`comment`);
   comment.appendChild(h3);
   comment.appendChild(p);
-  console.log(comment);
+  // display elements on the page
+  const commentSection = document.getElementById(`comments`);
+  console.log(commentSection);
+  commentSection.appendChild(comment);
+  //reset values of the form
+  inputField.value = null;
+  textArea.value = null;
 }
 
 //function addParagraph() {
